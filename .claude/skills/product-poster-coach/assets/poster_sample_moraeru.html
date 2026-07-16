@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>プロダクトポスター 記入例 — モラエル</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="poster.css">
+</head>
+<body>
+<!-- 記入例（架空学生「モラエル」＝給付型奨学金マッチング）。文体・分量の基準として参照する。 -->
+<div class="poster">
+
+  <header class="poster__header">
+    <div class="brand">
+      <span class="brand__logo">web3/AI</span>
+      <span class="brand__event">CHIBATECH PROTOTYPE · 2026.07.16</span>
+    </div>
+    <div class="brand__meta">千葉工業大学「総合科学特論 web3・AI概論」</div>
+  </header>
+
+  <section class="hero">
+    <div class="hero__badges">
+      <span class="tag tag--pink">A-1 プロダクト</span>
+      <span class="tag tag--outline">AI Agent · Web App</span>
+    </div>
+    <h1 class="hero__title">モラエル</h1>
+    <p class="hero__tagline">
+      <span class="tagline__who">探せなかった学生が</span>
+      <span class="tagline__what">もらえる奨学金に</span>
+      <span class="tagline__how">向こうから出会えるようにする</span>
+    </p>
+    <div class="hero__visual">
+      <span class="ph">決めスクショ: プロフィール入力 → 対象の給付型が締切つきで届く画面</span>
+    </div>
+  </section>
+
+  <div class="two-col">
+    <section class="card card--bug">
+      <h2 class="section__title">
+        <span class="section__num">01</span>
+        <span class="section__name">バグ</span>
+        <span class="section__sub">実際に困ったこと</span>
+        <span class="badge badge--must">必須</span>
+      </h2>
+      <p class="quote quote--bug">
+        「締切の2日後に、月5万円・返済不要の奨学金の存在を知った」
+      </p>
+      <ul class="bullet-list">
+        <li>探していたのに、財団ごとのPDFを全部読むしかなく、対象か判断できなかった</li>
+        <li>検索サイトはあるが「探しに行ける人」しか救えない構造</li>
+      </ul>
+    </section>
+
+    <section class="card card--solution">
+      <h2 class="section__title">
+        <span class="section__num">02</span>
+        <span class="section__name">解決策 (プロダクト)</span>
+        <span class="section__sub">選んだ形</span>
+        <span class="badge badge--must">必須</span>
+      </h2>
+      <p class="quote quote--solution">
+        プロフィールを一度入れるだけで、エージェントが財団サイトを毎晩巡回し、あなたが対象の給付型を締切つきで届ける。
+      </p>
+      <div class="how__visual">
+        <span class="ph">UI: 対象一覧＋締切リマインド（Before/After が見える画面）</span>
+      </div>
+    </section>
+  </div>
+
+  <section class="traction">
+    <h2 class="section__title traction__title">
+      <span class="section__num">03</span>
+      <span class="section__name">検証実績</span>
+      <span class="section__sub">試して確かめた</span>
+      <span class="badge badge--must">必須</span>
+    </h2>
+    <div class="traction__grid">
+      <div class="metric"><span class="metric__num">42</span><span class="metric__label">使ってくれた人</span></div>
+      <div class="metric"><span class="metric__num">8</span><span class="metric__label">1人平均のヒット件数</span></div>
+      <div class="metric"><span class="metric__num">3</span><span class="metric__label">応募を決めた人</span></div>
+      <div class="metric"><span class="metric__num">6週</span><span class="metric__label">改善イテレーション</span></div>
+    </div>
+    <div class="traction__body">
+      <div class="ba-compare">
+        <div class="ba-side ba-side--before"><span class="ba__label">Before</span><span class="ba__figure">数千PDFを手で確認（実質不可能）</span></div>
+        <div class="ba-arrow">→</div>
+        <div class="ba-side ba-side--after"><span class="ba__label">After</span><span class="ba__figure">対象だけ締切つきで届く</span></div>
+      </div>
+      <blockquote class="user-voice">
+        「知らなかった給付型が8件も出てきて、留学の応募を決めた」
+        <cite>— β利用の友人</cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <div class="two-col">
+    <section class="card card--tech">
+      <h2 class="section__title">
+        <span class="section__num">04</span>
+        <span class="section__name">技術構成</span>
+        <span class="section__sub">賢さは借りて、力仕事は自分で</span>
+        <span class="badge badge--rec">推奨</span>
+      </h2>
+      <div class="tech__arch">
+        <span class="ph">アーキ図: 収集→抽出→突合→通知 のエージェント4体</span>
+      </div>
+      <ul class="tech__stack">
+        <li><code>Claude</code>要件PDFの構造化・突合判断</li>
+        <li><code>ローカルLLM</code>毎晩の大量巡回・一次抽出</li>
+        <li><code>Next.js / Supabase</code>アプリと通知</li>
+      </ul>
+    </section>
+
+    <section class="card card--learned">
+      <h2 class="section__title">
+        <span class="section__num">05</span>
+        <span class="section__name">失敗と学び</span>
+        <span class="section__sub">失敗は学びのたね</span>
+        <span class="badge badge--must">必須</span>
+      </h2>
+      <div class="learned__block learned__block--failed">
+        <span class="learned__label learned__label--failed">✗ 通用しなかった</span>
+        <p>全部を1つのLLMに任せる設計は、誤マッチが多く通知が信頼されなかった</p>
+      </div>
+      <div class="learned__block learned__block--won">
+        <span class="learned__label learned__label--won">✓ 分かったこと</span>
+        <p>抽出と突合を分け、誤マッチを通知前に止める品質ゲートを入れると信頼が戻ると分かった</p>
+      </div>
+    </section>
+  </div>
+
+  <section class="next">
+    <h2 class="section__title next__title">
+      <span class="section__num">06</span>
+      <span class="section__name">次の一手 (方向転換案)</span>
+      <span class="section__sub">もっとよくしていく</span>
+      <span class="badge badge--rec-strong">強く推奨</span>
+    </h2>
+    <p class="next__body">
+      大学の学生支援課と実証へ方向転換 ／ 高校生の「進学前マッチ」を試す ／ 奨学財団の方に届け方を相談したい
+    </p>
+  </section>
+
+  <footer class="poster__footer">
+    <div class="team">
+      <div class="team__photo"><span class="ph">顔写真</span></div>
+      <div class="team__info">
+        <div class="team__name-row"><div class="team__name">佐藤 悠</div><span class="badge badge--must badge--small">必須</span></div>
+        <div class="team__affiliation">千葉工業大学 情報変革科学部 3年</div>
+        <div class="team__contact">sato.yu@example.ac.jp · @sato_moraeru</div>
+        <div class="team__pitch"><span class="pitch__label">話したいこと</span>教育×AIの新規事業を一緒に考えたいです</div>
+      </div>
+    </div>
+    <div class="qrs">
+      <div class="qr"><div class="qr__code">QR</div><span class="qr__label">プロダクト</span></div>
+      <div class="qr"><div class="qr__code">QR</div><span class="qr__label">連絡先/SNS</span></div>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>

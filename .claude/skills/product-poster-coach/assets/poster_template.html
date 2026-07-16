@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>CHIBATECH PROTOTYPE — Product Poster (A4)</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="poster.css">
+</head>
+<body>
+<!--
+  === 使い方 ===
+  1. {{ここを書く}} を自分の内容に置き換える（コーチと対話しながら1枠ずつ）
+  2. 埋める順: 03 検証実績 → 05 失敗と学び → 01 バグ（この3つが揃えば "話しかけたい学生"）
+  3. 数字は小さくても必ず入れる（「0」は避ける）
+  4. 画像は figures/ に置き <img src="figures/xxx.png"> で差し込む
+  5. 印刷: Cmd+P → 用紙: A4縦 → 余白: なし → 詳細設定 → 背景グラフィック: ON → PDF保存
+-->
+
+<div class="poster">
+
+  <!-- ============ HEADER ============ -->
+  <header class="poster__header">
+    <div class="brand">
+      <span class="brand__logo">web3/AI</span>
+      <span class="brand__event">CHIBATECH PROTOTYPE · 2026.07.16</span>
+    </div>
+    <div class="brand__meta">千葉工業大学「総合科学特論 web3・AI概論」</div>
+  </header>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="hero__badges">
+      <span class="tag tag--pink">{{A-1 プロダクト / A-2 エージェント}}</span>
+      <span class="tag tag--outline">{{カテゴリ: 例) AI Agent · Web App · Skill · MCP}}</span>
+    </div>
+    <h1 class="hero__title">{{プロダクト名}}</h1>
+    <p class="hero__tagline">
+      <span class="tagline__who">{{誰の}}</span>
+      <span class="tagline__what">{{何が}}</span>
+      <span class="tagline__how">{{どう変わるか}}</span>
+    </p>
+    <div class="hero__visual">
+      <span class="ph">メインの絵 / プロダクトの決めスクショ（&lt;img src="figures/hero.png"&gt;）</span>
+    </div>
+  </section>
+
+  <!-- ============ 01 BUG / 02 SOLUTION ============ -->
+  <div class="two-col">
+    <section class="card card--bug">
+      <h2 class="section__title">
+        <span class="section__num">01</span>
+        <span class="section__name">バグ</span>
+        <span class="section__sub">実際に困ったこと</span>
+        <span class="badge badge--must">必須</span>
+      </h2>
+      <p class="quote quote--bug">
+        「{{__という場面で、__で困ってきた}}」
+      </p>
+      <ul class="bullet-list">
+        <li>{{誰が困っているのか (具体的に)}}</li>
+        <li>{{なぜ他のサービスでは解けないのか}}</li>
+      </ul>
+    </section>
+
+    <section class="card card--solution">
+      <h2 class="section__title">
+        <span class="section__num">02</span>
+        <span class="section__name">解決策 (プロダクト)</span>
+        <span class="section__sub">選んだ形</span>
+        <span class="badge badge--must">必須</span>
+      </h2>
+      <p class="quote quote--solution">
+        {{使う人が何ができるようになるか、3行以内で}}
+      </p>
+      <div class="how__visual">
+        <span class="ph">UI/UX スクショ（変化が見える画面）</span>
+      </div>
+    </section>
+  </div>
+
+  <!-- ============ 03 TRACTION (★最重要) ============ -->
+  <section class="traction">
+    <h2 class="section__title traction__title">
+      <span class="section__num">03</span>
+      <span class="section__name">検証実績</span>
+      <span class="section__sub">試して確かめた</span>
+      <span class="badge badge--must">必須</span>
+    </h2>
+
+    <div class="traction__grid">
+      <div class="metric">
+        <span class="metric__num">{{XX}}</span>
+        <span class="metric__label">使ってくれた人</span>
+      </div>
+      <div class="metric">
+        <span class="metric__num">{{XX}}</span>
+        <span class="metric__label">試した回数</span>
+      </div>
+      <div class="metric">
+        <span class="metric__num">{{XX%}}</span>
+        <span class="metric__label">よくなった割合</span>
+      </div>
+      <div class="metric">
+        <span class="metric__num">{{XX}}</span>
+        <span class="metric__label">続けて使ってくれた人</span>
+      </div>
+    </div>
+
+    <div class="traction__body">
+      <div class="ba-compare">
+        <div class="ba-side ba-side--before">
+          <span class="ba__label">Before</span>
+          <span class="ba__figure">{{今の時間・手数}}</span>
+        </div>
+        <div class="ba-arrow">→</div>
+        <div class="ba-side ba-side--after">
+          <span class="ba__label">After</span>
+          <span class="ba__figure">{{使った後の時間・手数}}</span>
+        </div>
+      </div>
+      <blockquote class="user-voice">
+        「{{使ってくれた人の声を1つ}}」
+        <cite>— {{立場・属性}}</cite>
+      </blockquote>
+    </div>
+
+  </section>
+
+  <!-- ============ 04 TECH / 05 LEARNED ============ -->
+  <div class="two-col">
+    <section class="card card--tech">
+      <h2 class="section__title">
+        <span class="section__num">04</span>
+        <span class="section__name">技術構成</span>
+        <span class="section__sub">賢さは借りて、力仕事は自分で</span>
+        <span class="badge badge--rec">推奨</span>
+      </h2>
+      <div class="tech__arch">
+        <span class="ph">アーキ図（&lt;img src="figures/arch.png"&gt;）</span>
+      </div>
+      <ul class="tech__stack">
+        <li><code>{{Claude/GPT-5}}</code>むずかしい判断・企画</li>
+        <li><code>{{Gemma4}}</code>単純で大量の作業</li>
+        <li><code>{{Next.js / Supabase}}</code>アプリを動かす</li>
+      </ul>
+    </section>
+
+    <section class="card card--learned">
+      <h2 class="section__title">
+        <span class="section__num">05</span>
+        <span class="section__name">失敗と学び</span>
+        <span class="section__sub">失敗は学びのたね</span>
+        <span class="badge badge--must">必須</span>
+      </h2>
+      <div class="learned__block learned__block--failed">
+        <span class="learned__label learned__label--failed">✗ 通用しなかった</span>
+        <p>{{__というやり方は__で通用しなかった}}</p>
+      </div>
+      <div class="learned__block learned__block--won">
+        <span class="learned__label learned__label--won">✓ 分かったこと</span>
+        <p>{{__を__に分けて考えると__になると分かった}}</p>
+      </div>
+    </section>
+  </div>
+
+  <!-- ============ 06 NEXT ============ -->
+  <section class="next">
+    <h2 class="section__title next__title">
+      <span class="section__num">06</span>
+      <span class="section__name">次の一手 (方向転換案)</span>
+      <span class="section__sub">もっとよくしていく</span>
+      <span class="badge badge--rec-strong">強く推奨</span>
+    </h2>
+    <p class="next__body">
+      {{__ を方向転換 / __ を試す / __ 業界の方に相談したい}}
+    </p>
+  </section>
+
+  <!-- ============ FOOTER (★ 顔写真 + QR 必須) ============ -->
+  <footer class="poster__footer">
+    <div class="team">
+      <div class="team__photo">
+        <span class="ph">顔写真</span>
+      </div>
+      <div class="team__info">
+        <div class="team__name-row">
+          <div class="team__name">{{氏名}}</div>
+          <span class="badge badge--must badge--small">必須</span>
+        </div>
+        <div class="team__affiliation">{{千葉工業大学 __学部 __年 / 社会人受講生}}</div>
+        <div class="team__contact">{{email@example.com}} · {{@x_handle}}</div>
+        <div class="team__pitch">
+          <span class="pitch__label">話したいこと</span>
+          {{採用担当と話したい内容を1行}}
+        </div>
+      </div>
+    </div>
+    <div class="qrs">
+      <div class="qr">
+        <div class="qr__code">QR</div>
+        <span class="qr__label">プロダクト</span>
+      </div>
+      <div class="qr">
+        <div class="qr__code">QR</div>
+        <span class="qr__label">連絡先/SNS</span>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+</body>
+</html>
